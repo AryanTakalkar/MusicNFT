@@ -12,11 +12,11 @@ import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 /**
- * @title Advanced Music NFT Copyright Protection Platform
+ * @title  Music NFT Copyright Protection Platform
  * @dev Implements a comprehensive system for music copyright protection using NFTs
- * with advanced features like collaborative ownership, royalty splitting, and fraud prevention
+ * with  features like collaborative ownership, royalty splitting, and fraud prevention
  */
-contract AdvancedMusicNFT is 
+contract MusicNFT is 
     ERC721, 
     ERC721URIStorage, 
     ERC721Royalty,
@@ -33,7 +33,7 @@ contract AdvancedMusicNFT is
 
     Counters.Counter private _tokenIds;
 
-    // Advanced storage structures
+    //  storage structures
     struct MusicMetadata {
         string title;
         string artist;
@@ -55,7 +55,7 @@ contract AdvancedMusicNFT is
         uint256 totalCollected;
     }
 
-    // Advanced mappings
+    //  mappings
     mapping(uint256 => MusicMetadata) private _musicData;
     mapping(uint256 => RoyaltyInfo) private _royalties;
     mapping(bytes32 => bool) private _usedContentHashes;
@@ -91,13 +91,13 @@ contract AdvancedMusicNFT is
         string reason
     );
 
-    constructor() ERC721("AdvancedMusicNFT", "AMNFT") {
+    constructor() ERC721("MusicNFT", "AMNFT") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(ADMIN_ROLE, msg.sender);
     }
 
     /**
-     * @dev Mints a new music NFT with advanced validation and security features
+     * @dev Mints a new music NFT with  validation and security features
      * @param title Music title
      * @param ipfsHash IPFS hash of the music file
      * @param contentHash Hash of the actual music content
@@ -154,7 +154,7 @@ contract AdvancedMusicNFT is
     }
 
     /**
-     * @dev Registers copyright with advanced validation
+     * @dev Registers copyright with  validation
      * @param tokenId Token ID
      * @param expiryDate Copyright expiry date
      * @param legalDocHash Hash of legal documentation
